@@ -44,8 +44,8 @@ class Modulus10 {
   lastCode = "";
 
   /**
-   * 
-   * @param {String} barcode 
+   *
+   * @param {String} barcode
    * @returns {String}
    */
   calc(barcode) {
@@ -59,7 +59,7 @@ class Modulus10 {
     const checkCode = chars.join("");
 
     //チェックディジット
-    const result = String(checkdigit(checkCode)),
+    const result = String(checkdigit(checkCode));
 
     return result;
   }
@@ -81,7 +81,7 @@ function doClick() {
 
   //チェックディジットの結果
   const result = modulus10.calc(barcode);
-  
+
   //入力値の最終桁
   const lastCode = modulus10.getLastCode();
 
@@ -89,7 +89,5 @@ function doClick() {
   const p = document.querySelector("#result");
 
   p.textContent = `チェックディジット：${result}、
-  最終桁：${lastCode}、一致する？：${
-    lastCode === result ? "する" : "しない"
-  }`;
+  最終桁：${lastCode}、一致する？：${lastCode === result ? "する" : "しない"}`;
 }
